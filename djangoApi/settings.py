@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'djangoApi',
     'api',
-    'corsheaders'
+    'corsheaders',
+    'tests'
 ]
 
 MIDDLEWARE = [
