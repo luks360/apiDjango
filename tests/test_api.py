@@ -1,17 +1,17 @@
+from django.test import TestCase
 from api.models import User
+from rest_framework.test import APIClient
 
-class Tests(): 
-    def test_allUsers():
-        users = User.objects.all()
-        assert users == {}
+class TestView(TestCase):
 
-    def test_specificUser():
-        user = User.objects.filter(id=44)
-        assert user == {
-            "id": 44,
-            "name": "Lucas Santos",
-            "email": "santoslucasantos796@gmail.com",
-            "password": None
-        }
+    def setup(self):
+        pass
+
+    def testView(self):
+        client = APIClient()
+        response = client.post('/auth/login/', {'username': 'john', 'password': 'smith'})
+        assert response.status_code == 200
+
+
 
     
